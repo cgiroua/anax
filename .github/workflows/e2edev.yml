@@ -1,0 +1,20 @@
+name: e2edev
+on: [push, pull_request]
+  branches:
+    - main
+jobs:
+  prep-test:
+    runs-on: ubuntu-bionic
+    strategy:
+      matrix:
+        tests: [ 'NOLOOP=1', 'NOLOOP=1 TEST_PATTERNS=sall' ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.14'
+      - run: go version
+      - run: make -C test
+      - run: docker ps
+      - run: make test -C test TEST_VARS="${{ matrix.tests }}"
