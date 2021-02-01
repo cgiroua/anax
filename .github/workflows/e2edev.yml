@@ -9,7 +9,7 @@ jobs:
           - tests: 'NOLOOP=1'
           - tests: 'NOLOOP=1 TEST_PATTERNS=sall'
     steps:
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - uses: actions/setup-go@v2
         with:
