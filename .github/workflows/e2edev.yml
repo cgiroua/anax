@@ -1,5 +1,5 @@
 name: e2edev
-on: ['push', 'pull_request']
+on: push
   branches:
     - 'master'
 jobs:
