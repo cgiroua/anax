@@ -1,6 +1,7 @@
-on: push
+name: e2edev
+on: ['push', 'pull_request']
   branches:
-    - master
+    - 'master'
 jobs:
   prep-test:
     runs-on: ubuntu-bionic
