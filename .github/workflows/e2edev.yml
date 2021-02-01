@@ -1,7 +1,8 @@
 name: e2edev
-on: push
-  branches:
-    - 'master'
+on:
+  push:
+    branches:
+      - 'master'
 jobs:
   prep-test:
     runs-on: ubuntu-bionic
